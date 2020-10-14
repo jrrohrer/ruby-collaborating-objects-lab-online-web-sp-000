@@ -9,4 +9,8 @@ class MP3Importer
     @files = Dir.entries(@path)
     @files.delete_if {|file| file == "." || file ==".."}
   end
+
+  def import
+    Song.new_by_filename(some_filename)
+  end
 end
